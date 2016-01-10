@@ -60,7 +60,7 @@ $ cammesa datapoints "GBA" demand | head
 
 ## API
 
-A su vez este paquete expone la clase `CammesaAPI` para poder utilizada en otros programas. La misma trabaja en base de *Promises* y provee 3 métodos análogos a los que ofrece el CLI. La forma más fácil de ver cómo utilizarla es echar un vistazo al archivo [bin/cammesa.js](blob/master/bin/cammesa.js)
+A su vez este paquete expone la clase `CammesaAPI` para poder utilizada en otros programas. La misma trabaja en base de *Promises* y provee 3 métodos análogos a los que ofrece el CLI. La forma más fácil de ver cómo utilizarla es echar un vistazo al archivo [bin/cammesa.js](bin/cammesa.js)
 
 ## license
 
