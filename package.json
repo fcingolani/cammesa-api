@@ -1,0 +1,33 @@
+{
+  "name": "cammesa-api",
+  "version": "1.0.0",
+  "description": "CLI y librería para consultar de series de datos de Cammesa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/fcingolani/cammesa-api.git"
+  },
+  "keywords": [
+    "cammesa",
+    "api"
+  ],
+  "author": {
+    "name": "Federico Cingolani",
+    "email": "mail@fcingolani.com.ar",
+    "url": "http://fcingolani.com.ar"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.1.1",
+    "cheerio": "^0.19.0",
+    "commander": "^2.9.0",
+    "moment": "^2.11.1",
+    "request": "^2.67.0"
+  },
+  "bin": {
+    "cammesa": "./bin/cammesa.js"
+  }
+}
