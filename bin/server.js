@@ -29,6 +29,6 @@ server.get('/:source/:serie', (req, res, next) => {
     .catch(next);
 });
 
-server.listen(process.env.port || 80, function() {
-  console.log('%s listening at %s', server.name, server.url);
+server.listen(process.env.port, () => {
+  console.log('%s listening at %s', server.name, server.url)
 });

@@ -4,7 +4,7 @@
   "description": "Web API, CLI y librería para consulta de series de datos de Cammesa",
   "main": "index.js",
   "scripts": {
-    "start": "./bin/server.js",
+    "now-start": "node ./bin/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
