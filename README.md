@@ -57,7 +57,7 @@ Hay una imagen pública de la API alojada en [Docker Hub](https://hub.docker.com
 
 ### Configuración
 
-El servidor se puede configurar mediante las siguiente variables de entorno:
+El servidor se puede configurar mediante las siguientes variables de entorno:
 
 | Variable | Descripción | Valor Predeterminado
 |-|-|-
