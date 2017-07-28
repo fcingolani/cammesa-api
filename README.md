@@ -8,9 +8,23 @@ En el caso de *carga* (de *trafos*) no hay información histórica disponible, y
 
 *Nota: azarosamente, la información se despublica del sitio por unos minutos y luego vuelve a aparecer actualizada. Sospecho que debe ser por un tema de republicación o similar, aunque de todas formas no puedo hacer nada contra ello. Hay que darle hasta que aparezca. (?)*
 
+## Instalación
+
+Instalar la herramienta utilizando `npm`
+
+```
+λ npm install -g cammesa
+```
+
 ## API REST
 
-Este paquete incluye una API básica, [bin/server.js](bin/server.js). Hay una demo pública de la misma disponible hosteada en [now](https://zeit.co/now).
+Este paquete incluye una API básica, [bin/server.js](bin/server.js). Una vez instalado el paquete de manera global, puede ejecutarse la misma mediante:
+
+```
+λ cammesa-server
+```
+
+De manera predeterminada escuchará en [http://localhost:3000/](http://localhost:3000/). Hay una demo pública de la misma disponible hosteada en [now](https://zeit.co/now).
 
 ### Listado de fuentes de datos
 
@@ -33,18 +47,35 @@ Este paquete incluye una API básica, [bin/server.js](bin/server.js). Hay una de
 [{"value":14819.00195,"date":"2016-04-18T03:05:00+00:00"},{"value":14630.71387,"date":"2016-04-18T03:10:00+00:00"},{"value":14531.96777,"date":"2016-04-18T03:15:00+00:00"},{"value":14510.32617,"date":"2016-04-18T03:20:00+00:00"},{"value":14334.03516,"date":"2016-04-18T03:25:00+00:00"},{"value":14210.70215,"date":"2016-04-18T03:30:00+00:00"},{"value":14214.37891,"date":"2016-04-18T03:35:00+00:00"},{"value":14106.13184,"date":"2016-04-18T03:40:00+00:00"},{"value":14012.23438,"date":"2016-04-18T03:45:00+00:00"},...
 ```
 
+### Docker
+
+Hay una imagen pública de la API alojada en [Docker Hub](https://hub.docker.com/r/fcingolani/cammesa-api/):
+
+```
+λ docker run -ti -p 3000:3000 fcingolani/cammesa-api
+```
+
+### Configuración
+
+El servidor se puede configurar mediante las siguiente variables de entorno:
+
+| Variable | Descripción | Valor Predeterminado
+|-|-|-
+| `PORT` | Puerto en el que escuchará la API. | `3000`
+| `CORS_ALLOWED_ORIGINS` | Lista separada por comas (sin espacios) de origins habilitados para CORS. Si no está definida, no se habilita CORS. | Sin definir.
+
 ## CLI
 
 Instalar la herramienta utilizando `npm`
 
 ```
-npm install -g cammesa
+λ npm install -g cammesa
 ```
 
 ### Listar fuentes de datos
 
 ```
-$ cammesa sources
+λ cammesa sources
 Del SADI incluyendo Patagonia
 GBA
 EDELAP
@@ -61,7 +92,7 @@ Carga TR1 de Ezeiza en %I nom.
 ### Listar series de datos disponibles para una fuente
 
 ```
-$ cammesa series "GBA"
+λ cammesa series "GBA"
 temperature
 demand
 ```
@@ -69,7 +100,7 @@ demand
 ### Listar datos disponibles para una serie
 
 ```
-$ cammesa datapoints "GBA" demand | head
+λ cammesa datapoints "GBA" demand | head
 2016-01-01T00:05:00-03:00 5974.85303
 2016-01-01T00:10:00-03:00 5951.6582
 2016-01-01T00:15:00-03:00 5933.30371
@@ -90,7 +121,7 @@ A su vez este paquete expone la clase `CammesaAPI` para poder utilizada en otros
 Para hacer uso del mismo, instalarlo como dependencia mediante npm:
 
 ```
-npm install cammesa --save
+λ npm install cammesa --save
 ```
 
 ## Licencia
