@@ -10,6 +10,22 @@ let api = new CammesaAPI;
 
 let server = restify.createServer();
 
+const config = {
+  port: process.env.PORT || process.env.port || 3000,
+  corsAllowedOrigins: process.env.CORS_ALLOWED_ORIGINS
+};
+
+if(config.corsAllowedOrigins){
+  const corsMiddleware = require('restify-cors-middleware');
+
+  const cors = corsMiddleware({
+    origins: config.corsAllowedOrigins.split(','),
+  });
+
+  server.pre(cors.preflight);
+  server.use(cors.actual);
+}
+
 server.get('/', (req, res, next) => {
   api.getSources()
     .then( sources => {
@@ -38,6 +54,6 @@ server.get('/:source/:serie', (req, res, next) => {
     .catch(next);
 });
 
-server.listen(process.env.port || 3000, () => {
+server.listen(config.port, () => {
   console.log('%s listening at %s', server.name, server.url)
 });

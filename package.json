@@ -4,6 +4,7 @@
   "description": "Web API, CLI y librería para consulta de series de datos de Cammesa",
   "main": "index.js",
   "scripts": {
+    "start": "node ./bin/server.js",
     "now-start": "node ./bin/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,9 +31,11 @@
     "commander": "^2.9.0",
     "moment": "^2.11.1",
     "request": "^2.67.0",
-    "restify": "^4.0.4"
+    "restify": "^4.0.4",
+    "restify-cors-middleware": "^1.0.0"
   },
   "bin": {
-    "cammesa": "./bin/cammesa.js"
+    "cammesa": "./bin/cammesa.js",
+    "cammesa-server": "./bin/server.js"
   }
 }
