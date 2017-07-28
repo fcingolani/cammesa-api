@@ -24,26 +24,26 @@ Este paquete incluye una API básica, [bin/server.js](bin/server.js). Una vez in
 λ cammesa-server
 ```
 
-De manera predeterminada escuchará en [http://localhost:3000/](http://localhost:3000/). Hay una demo pública de la misma disponible hosteada en [now](https://zeit.co/now).
+De manera predeterminada escuchará en [http://localhost:3000/](http://localhost:3000/). Hay una demo pública de la misma disponible hosteada en [now](https://zeit.co/now), bajo el dominio [https://cammesa-api-flxfhvvule.now.sh](https://cammesa-api-flxfhvvule.now.sh).
 
 ### Listado de fuentes de datos
 
 ```
-λ curl https://cammesa-api-nduvhpmpcm.now.sh/
+λ curl http://localhost:3000/
 ["Del SADI incluyendo Patagonia","GBA","EDELAP","EDENOR","EDESUR","Provincia de Buenos Aires","Carga TR2 de Rodriguez en %I nom.","Carga TR3 de Rodriguez en %I nom.","Carga TR4 de Rodriguez en %I nom.","Carga TR1 de Ezeiza en %I nom.","Carga TR2 de Ezeiza en %I nom.","Carga TR3 de Ezeiza en %I nom.","Carga TR1 de Abasto en %I nom.","Carga TR2 de Abasto en %I nom.","Carga TR1 de Campana en %I nom.","Carga TR2 de Campana en %I nom.","Carga TR1 de Ramallo en %I nom.","Carga TR4 de Ramallo en %I nom.","Carga TR9 de Ramallo en %I nom.","Carga TR1 de Henderson en %I nom.","Carga TR2 de Henderson e...
 ```
 
 ### Listado de series de datos disponibles para una fuente
 
 ```
-λ curl https://cammesa-api-nduvhpmpcm.now.sh/Corrientes%20Capital
+λ curl http://localhost:3000/Corrientes%20Capital
 ["temperature","demand"]
 ```
 
 ### Listado de datos disponibles para una serie
 
 ```
-λ curl https://cammesa-api-nduvhpmpcm.now.sh/SADI%20sin%20Patagonia/demand
+λ curl http://localhost:3000/SADI%20sin%20Patagonia/demand
 [{"value":14819.00195,"date":"2016-04-18T03:05:00+00:00"},{"value":14630.71387,"date":"2016-04-18T03:10:00+00:00"},{"value":14531.96777,"date":"2016-04-18T03:15:00+00:00"},{"value":14510.32617,"date":"2016-04-18T03:20:00+00:00"},{"value":14334.03516,"date":"2016-04-18T03:25:00+00:00"},{"value":14210.70215,"date":"2016-04-18T03:30:00+00:00"},{"value":14214.37891,"date":"2016-04-18T03:35:00+00:00"},{"value":14106.13184,"date":"2016-04-18T03:40:00+00:00"},{"value":14012.23438,"date":"2016-04-18T03:45:00+00:00"},...
 ```
 
